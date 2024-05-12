@@ -12,13 +12,13 @@ button,
   color: white;
   padding: 10px 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   margin-top: 10px;
-  margin-: 70px;
+  margin-left: 110px;
   
   display: block; /* Ensure buttons are block-level elements */
-  width: 60%; /* Full width for smaller screens */
+  width: 50%; /* Full width for smaller screens */
 }
 
 button:hover,
@@ -75,7 +75,7 @@ input[type="submit"]:hover {
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: px) {
   form {
     max-width: 50%;
     padding: 15px;
@@ -85,21 +85,8 @@ input[type="submit"]:hover {
   .toggle-button {
     padding: 8px 5px;
     border-radius: 10px;
-    margin-left: 40px;
+    margin-left: 77px;
   }
 }
 
-@media (max-width: 480px) {
-  body {
-    padding: 10px;
-  }
 
-  form {
-    margin: 10px;
-  }
-
-  button,
-  .toggle-button {
-    padding: 5px 8px;
-  }
-}

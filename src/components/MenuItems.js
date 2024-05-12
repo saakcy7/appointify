@@ -18,7 +18,7 @@ export const MenuItems = [
         icon: "fa-solid fa-user"
     },
     {
-        title: "Log",
+        title: "Signup",
         url: "/log",
         cName: "nav-links-mobile",
         icon: "fa-solid fa-right-to-bracket"

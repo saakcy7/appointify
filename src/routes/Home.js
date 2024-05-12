@@ -3,6 +3,7 @@ import Hero from "../components/hero";
 import HomeImg from "../assets/img11.jpg";
 import Features from "../components/Features";
 import Last from "../components/Last";
+import Footer from "../components/Footer";
 
 function Home(){
     return(
@@ -19,6 +20,7 @@ function Home(){
         btnClass="show"/>
         <Features/>
         <Last/>
+        <Footer/>
         </> 
     );
 }

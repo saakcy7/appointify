@@ -28,6 +28,24 @@ const AccountForm = () => {
   const toggleFormType = () => {
     setFormType(formType === 'signup' ? 'login' : 'signup');
   };
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleCategoryChange = (event) => {
+    const category = event.target.value;
+    setSelectedCategory(category);
+    setSelectedOption('');
+  };
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+  const optionsByCategory = {
+    medical: ['Veterinarian', 'Physician', 'Psychiatrist', 'Dentist'],
+    beauty: ['Beautician', 'Nail Technician', 'Beauty Therapist', 'Hairstylist', 'Makeup Artist'],
+    maintenance: ['Electrician', 'Plumber' ,'Network Technician', 'AC Technician'],
+  };
 
   return (
     <div>
@@ -51,15 +69,29 @@ const AccountForm = () => {
             <option value="client">Client</option>
             <option value="professional">Professional</option>
           </select>
-          {formData.role === 'professional' && (
-            <select name="profession" onChange={handleInputChange} required>
-              <option value="">Select Profession</option>
-              <option value="medical">Medical</option>
-              <option value="salon">Salon</option>
-              <option value="plumber">Plumber</option>
-              <option value="electrician">Electrician</option>
-            </select>
-          )}
+        
+         
+            {formData.role === 'professional' && (
+      <select value={selectedCategory} onChange={handleCategoryChange}>
+        <option value="category">Select Category</option>
+        <option value="medical">Medical</option>
+        <option value="beauty">Beauty</option>
+        <option value="maintenance">Maintenance</option>
+      </select>
+            )}
+      {selectedCategory && (
+       
+          <select value={selectedOption} onChange={handleOptionChange}>
+            <option value="profession">Select Profession</option>
+            {optionsByCategory[selectedCategory].map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+      )}
+
+
           <button type="submit">Sign Up</button>
           <button onClick={toggleFormType}>
          {formType === 'signup' ? 'Login' : 'Signup'}
@@ -69,7 +101,6 @@ const AccountForm = () => {
       {formType === 'login' && (
         <form onSubmit={handleSubmit}>
           <h1>Login</h1>
-          <input type="text" name="name" placeholder="Name" onChange={handleInputChange} required />
           <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
           <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
           <button type="submit">Login</button>
