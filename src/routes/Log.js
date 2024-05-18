@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./LogStyles.css";
+
 const AccountForm = () => {
   const [formType, setFormType] = useState("signup"); // 'signup' or 'login'
   const [formData, setFormData] = useState({
@@ -11,7 +12,7 @@ const AccountForm = () => {
     DOB: "",
     gender: "",
     role: "client", // default to 'client'
-    //profession: "",
+    profession: "",
   });
 
   const handleInputChange = (event) => {
@@ -47,6 +48,26 @@ const AccountForm = () => {
     setFormType(formType === "signup" ? "login" : "signup");
   };
 
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleCategoryChange = (event) => {
+    const category = event.target.value;
+    setSelectedCategory(category);
+    setSelectedOption("");
+  };
+
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+    handleInputChange(event); // update formData
+  };
+
+  const optionsByCategory = {
+    medical: ["Veterinarian", "Physician", "Psychiatrist", "Dentist"],
+    beauty: ["Beautician", "Nail Technician", "Beauty Therapist", "Hairstylist", "Makeup Artist"],
+    maintenance: ["Electrician", "Plumber", "Network Technician", "AC Technician"],
+  };
+
   return (
     <div>
       {formType === "signup" && (
@@ -68,27 +89,43 @@ const AccountForm = () => {
             <option value="client">Client</option>
             <option value="professional">Professional</option>
           </select>
+
           {formData.role === "professional" && (
-            <select name="profession" onChange={handleInputChange} required>
-              <option value="">Select Profession</option>
-              <option value="medical">Medical</option>
-              <option value="salon">Salon</option>
-              <option value="plumber">Plumber</option>
-              <option value="electrician">Electrician</option>
-            </select>
+            <>
+              <select value={selectedCategory} onChange={handleCategoryChange}>
+                <option value="">Select Category</option>
+                <option value="medical">Medical</option>
+                <option value="beauty">Beauty</option>
+                <option value="maintenance">Maintenance</option>
+              </select>
+              {selectedCategory && (
+                <select name="profession" value={selectedOption} onChange={handleOptionChange}>
+                  <option value="">Select Profession</option>
+                  {optionsByCategory[selectedCategory].map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              )}
+            </>
           )}
+
           <button type="submit">Sign Up</button>
-          <button onClick={toggleFormType}>{formType === "signup" ? "Login" : "Signup"}</button>
+          <button type="button" onClick={toggleFormType}>
+            {formType === "signup" ? "Login" : "Signup"}
+          </button>
         </form>
       )}
       {formType === "login" && (
         <form onSubmit={handleSubmit}>
           <h1>Login</h1>
-          <input type="text" name="name" placeholder="Name" onChange={handleInputChange} required />
           <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
           <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
           <button type="submit">Login</button>
-          <button onClick={toggleFormType}>{formType === "signup" ? "Login" : "Signup"}</button>
+          <button type="button" onClick={toggleFormType}>
+            {formType === "signup" ? "Login" : "Signup"}
+          </button>
         </form>
       )}
     </div>
