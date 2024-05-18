@@ -13,34 +13,62 @@ const AccountForm = () => {
     gender: "",
     role: "client", // default to 'client'
     profession: "",
+    description: "",
+    category: "",
   });
+
+  const [message, setMessage] = useState(null);
+  const [messageType, setMessageType] = useState("");
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (event) => {
+  const handleSignupSubmit = async (event) => {
     event.preventDefault();
     try {
-      const body = {
-        ...formData,
-        DOB: new Date(formData.DOB),
-      };
+      console.log(formData);
       const response = await fetch("http://localhost:5000/user/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(body),
+        body: JSON.stringify(formData),
       });
       if (!response.ok) {
         const errorMessage = await response.text();
         throw new Error(errorMessage);
       }
-      console.log("User registered successfully!");
+      setMessageType("success");
+      setMessage("User registered successfully!");
     } catch (error) {
-      console.error("Error registering user:", error.message);
+      setMessageType("error");
+      setMessage(`Error registering user: ${error.message}`);
+    }
+  };
+
+  const handleLoginSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch("http://localhost:5000/user/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: formData.email, password: formData.password }),
+      });
+      if (!response.ok) {
+        const errorMessage = await response.text();
+        throw new Error(errorMessage);
+      }
+      const data = await response.json();
+      localStorage.setItem("token", data.token);
+      setMessageType("success");
+      setMessage("User logged in successfully!");
+    } catch (error) {
+      setMessageType("error");
+      setMessage(`Error logging in: ${error.message}`);
     }
   };
 
@@ -54,12 +82,14 @@ const AccountForm = () => {
   const handleCategoryChange = (event) => {
     const category = event.target.value;
     setSelectedCategory(category);
+    setFormData({ ...formData, category, profession: "", description: "" });
     setSelectedOption("");
   };
 
   const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-    handleInputChange(event); // update formData
+    const { name, value } = event.target;
+    setSelectedOption(value);
+    setFormData({ ...formData, [name]: value });
   };
 
   const optionsByCategory = {
@@ -70,8 +100,9 @@ const AccountForm = () => {
 
   return (
     <div>
+      {message && <div className={`message-box ${messageType}`}>{message}</div>}
       {formType === "signup" && (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSignupSubmit}>
           <h1>Signup</h1>
           <input type="text" name="fullName" placeholder="Name" onChange={handleInputChange} required />
           <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
@@ -92,14 +123,14 @@ const AccountForm = () => {
 
           {formData.role === "professional" && (
             <>
-              <select value={selectedCategory} onChange={handleCategoryChange}>
+              <select value={selectedCategory} onChange={handleCategoryChange} required>
                 <option value="">Select Category</option>
                 <option value="medical">Medical</option>
                 <option value="beauty">Beauty</option>
                 <option value="maintenance">Maintenance</option>
               </select>
               {selectedCategory && (
-                <select name="profession" value={selectedOption} onChange={handleOptionChange}>
+                <select name="profession" value={selectedOption} onChange={handleOptionChange} required>
                   <option value="">Select Profession</option>
                   {optionsByCategory[selectedCategory].map((option) => (
                     <option key={option} value={option}>
@@ -108,6 +139,7 @@ const AccountForm = () => {
                   ))}
                 </select>
               )}
+              {selectedCategory && selectedOption && <input type="text" name="description" placeholder="Write a description" onChange={handleInputChange} required />}
             </>
           )}
 
@@ -118,7 +150,7 @@ const AccountForm = () => {
         </form>
       )}
       {formType === "login" && (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleLoginSubmit}>
           <h1>Login</h1>
           <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
           <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
