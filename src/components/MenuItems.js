@@ -23,4 +23,21 @@ export const MenuItems = [
         cName: "nav-links-mobile",
         icon: "fa-solid fa-right-to-bracket"
     },
+    {
+        url:"/cat",
+        cName:"nav-links-cat",
+    },
+    {
+        url:"/main",
+        cName:"nav-links-main",
+    },
+    {
+        url:"/beauty",
+        cName:"nav-links-beauty",
+    },
+    {
+        url:"/medical",
+        cName:"nav-links-medical",
+    }
+
 ]

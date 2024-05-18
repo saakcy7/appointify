@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./LogStyles.css";
-
+import {Link} from "react-router-dom";
 const AccountForm = () => {
   const [formType, setFormType] = useState("signup"); // 'signup' or 'login'
   const [formData, setFormData] = useState({
@@ -154,7 +154,7 @@ const AccountForm = () => {
           <h1>Login</h1>
           <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
           <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
-          <button type="submit">Login</button>
+          <Link to="/cat"><button type="submit">Login</button></Link>
           <button type="button" onClick={toggleFormType}>
             {formType === "signup" ? "Login" : "Signup"}
           </button>
