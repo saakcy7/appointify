@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./LogStyles.css";
-import {Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 const AccountForm = () => {
   const [formType, setFormType] = useState("signup"); // 'signup' or 'login'
   const [formData, setFormData] = useState({
@@ -19,6 +20,7 @@ const AccountForm = () => {
 
   const [message, setMessage] = useState(null);
   const [messageType, setMessageType] = useState("");
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -42,6 +44,7 @@ const AccountForm = () => {
       }
       setMessageType("success");
       setMessage("User registered successfully!");
+      event.target.reset();
     } catch (error) {
       setMessageType("error");
       setMessage(`Error registering user: ${error.message}`);
@@ -66,6 +69,7 @@ const AccountForm = () => {
       localStorage.setItem("token", data.token);
       setMessageType("success");
       setMessage("User logged in successfully!");
+      navigate("/cat");
     } catch (error) {
       setMessageType("error");
       setMessage(`Error logging in: ${error.message}`);
@@ -154,7 +158,7 @@ const AccountForm = () => {
           <h1>Login</h1>
           <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
           <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
-          <Link to="/cat"><button type="submit">Login</button></Link>
+          <button type="submit">Login</button>
           <button type="button" onClick={toggleFormType}>
             {formType === "signup" ? "Login" : "Signup"}
           </button>
