@@ -4,7 +4,6 @@ import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import "./LogStyles.css";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const AccountForm = () => {
   const [formType, setFormType] = useState("signup");
@@ -97,15 +96,6 @@ const AccountForm = () => {
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
-  };
-
-  const handleGoogleSuccess = (response) => {
-    // Implement your Google sign-in success logic here
-  };
-
-  // Function to handle failed Google sign-in
-  const handleGoogleFailure = (error) => {
-    // Implement your Google sign-in failure logic here
   };
 
   const [selectedCategory, setSelectedCategory] = useState("");
