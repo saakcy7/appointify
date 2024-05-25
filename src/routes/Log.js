@@ -4,7 +4,8 @@ import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import "./LogStyles.css";
-import {Link} from "react-router-dom";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+
 const AccountForm = () => {
   const [formType, setFormType] = useState("signup");
   const [formData, setFormData] = useState({
@@ -21,8 +22,9 @@ const AccountForm = () => {
     category: "",
   });
 
-  const [message, setMessage] = useState(null);
-  const [messageType, setMessageType] = useState("");
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -43,8 +45,12 @@ const AccountForm = () => {
         const errorMessage = await response.text();
         throw new Error(errorMessage);
       }
-      setMessageType("success");
-      setMessage("User registered successfully!");
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "User registered successfully!",
+      });
+      event.target.reset();
     } catch (error) {
       Swal.fire({
         icon: "error",
@@ -70,8 +76,12 @@ const AccountForm = () => {
       }
       const data = await response.json();
       localStorage.setItem("token", data.token);
-      setMessageType("success");
-      setMessage("User logged in successfully!");
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "User logged in successfully!",
+      });
+      navigate("/cat");
     } catch (error) {
       Swal.fire({
         icon: "error",
@@ -169,23 +179,35 @@ const AccountForm = () => {
                 </>
               )}
 
-          <button type="submit">Sign Up</button>
-          <button type="button" onClick={toggleFormType}>
-            {formType === "signup" ? "Login" : "Signup"}
-          </button>
-        </form>
-      )}
-      {formType === "login" && (
-        <form onSubmit={handleLoginSubmit}>
-          <h1>Login</h1>
-          <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
-          <input type="password" name="password" placeholder="Password" onChange={handleInputChange} required />
-          <Link to="/cat"><button type="submit">Login</button></Link>
-          <button type="button" onClick={toggleFormType}>
-            {formType === "signup" ? "Login" : "Signup"}
-          </button>
-        </form>
-      )}
+              <div className="button-container">
+                <button type="submit">Sign Up</button>
+                <button type="button" className={`toggle-button ${formType === "signup" ? "inactive" : "active"}`} onClick={toggleFormType}>
+                  Login
+                </button>
+              </div>
+            </form>
+          )}
+          {formType === "login" && (
+            <form onSubmit={handleLoginSubmit}>
+              <h1>Login</h1>
+              <input type="email" name="email" placeholder="Email" onChange={handleInputChange} required />
+              <div className="password-container">
+                <input type={passwordVisible ? "text" : "password"} name="password" placeholder="Password" onChange={handleInputChange} required />
+                <FontAwesomeIcon icon={passwordVisible ? faEyeSlash : faEye} onClick={togglePasswordVisibility} className="password-icon" />
+              </div>
+              <div className="button-container">
+                <button type="submit">Login</button>
+                <button type="button" className={`toggle-button ${formType === "login" ? "inactive" : "active"}`} onClick={toggleFormType}>
+                  Signup
+                </button>
+              </div>
+              <p className="forgot-password-link" onClick={() => navigate("/forgot-password")}>
+                Forgot Password?
+              </p>
+            </form>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
