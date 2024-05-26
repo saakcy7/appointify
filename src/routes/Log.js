@@ -54,7 +54,7 @@ const AccountForm = () => {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: `Error registering user: ${error.message}`,
+        text: error.message,
       });
     }
   };
@@ -85,7 +85,7 @@ const AccountForm = () => {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: `Error logging in: ${error.message}`,
+        text: error.message,
       });
     }
   };

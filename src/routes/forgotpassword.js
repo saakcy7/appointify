@@ -37,7 +37,7 @@ const RequestResetOTP = () => {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: `Error sending OTP: ${error.message}`,
+        text: error.message,
       });
     }
   };

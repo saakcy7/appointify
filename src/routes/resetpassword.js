@@ -45,7 +45,7 @@ const ResetPassword = () => {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: `Error resetting password: ${error.message}`,
+        text: error.message,
       });
     }
   };

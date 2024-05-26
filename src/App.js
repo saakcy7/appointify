@@ -13,6 +13,8 @@ import ForgotPassword from "./routes/forgotpassword";
 import ResetPassword from "./routes/resetpassword";
 import VerifyResetOTP from "./routes/verifyotp";
 
+import VerifyEmail from "./routes/verification";
+
 function App() {
   useEffect(() => {}, []);
   return (
@@ -30,6 +32,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/verify-reset-otp" element={<VerifyResetOTP />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/verifyemail" element={<VerifyEmail />} />
       </Routes>
     </div>
   );

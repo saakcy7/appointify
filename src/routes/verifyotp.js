@@ -42,7 +42,7 @@ const VerifyResetOTP = () => {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: `Error verifying OTP: ${error.message}`,
+        text: error.message,
       });
     }
   };
