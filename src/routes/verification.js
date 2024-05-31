@@ -1,71 +1,72 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./LogStyles.css";
 
 const VerifyEmail = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    verificationCode: "",
-  });
+  const [verificationCode, setVerificationCode] = useState("");
+  const location = useLocation();
+  const { state } = location;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log("State in VerifyEmail component:", state);
+  }, [state]);
 
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+    setVerificationCode(event.target.value);
   };
 
   const handleVerifyEmail = async (event) => {
     event.preventDefault();
     try {
+      console.log("Sending OTP verification request...", { email: state.email, verificationCode });
       const response = await fetch("http://localhost:5000/user/verifyemail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ verificationCode: formData.verificationCode }),
+        body: JSON.stringify({ email: state.email, verificationCode }),
       });
-      if (!response.ok) {
-        const errorMessage = await response.text();
-        throw new Error(errorMessage);
-      }
 
-      // Verification successful, now register the user
-      const registerResponse = await fetch("http://localhost:5000/user/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      if (!registerResponse.ok) {
-        const errorMessage = await registerResponse.text();
-        throw new Error(errorMessage);
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        throw new Error(responseData.error || "Something went wrong");
       }
 
       Swal.fire({
         icon: "success",
-        title: "Success",
-        text: "User registered successfully!",
+        title: "Verified",
+        text: "Your email has been verified successfully! Now you can login.",
       });
 
-      // Reset the form after successful registration
       event.target.reset();
+      navigate("/log");
     } catch (error) {
+      console.error("Error verifying OTP:", error);
+
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: `Error registering user: ${error.message}`,
+        text: error.message,
       });
+
+      event.target.reset();
     }
   };
 
   return (
-    <div className="verify-email-container">
-      <h1>Verify Email</h1>
-      <form onSubmit={handleVerifyEmail}>
-        <p>Your code for verification has been sent to {formData.email}</p>
-        <input type="text" name="verificationCode" placeholder="Verification Code" onChange={handleInputChange} required />
-        <button type="submit">Verify Email</button>
-      </form>
+    <div className="signup-page-container">
+      <div className="account-form-wrapper">
+        <div className="account-form-container">
+          <form onSubmit={handleVerifyEmail}>
+            <h1>Enter OTP</h1>
+            <input type="text" name="otp" placeholder="OTP" value={verificationCode} onChange={handleInputChange} required />
+            <button type="submit">Verify OTP</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import "./LogStyles.css";
+import "./verification.js";
 
 const AccountForm = () => {
   const [formType, setFormType] = useState("signup");
@@ -33,6 +34,15 @@ const AccountForm = () => {
   const handleSignupSubmit = async (event) => {
     event.preventDefault();
     try {
+      if (formData.password.length <= 8) {
+        throw new Error("Password must be more than 8 characters.");
+      }
+
+      const specialCharacterRegex = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+      if (!specialCharacterRegex.test(formData.password)) {
+        throw new Error("Password must contain at least one special character.");
+      }
+
       const response = await fetch("http://localhost:5000/user/register", {
         method: "POST",
         headers: {
@@ -44,12 +54,14 @@ const AccountForm = () => {
         const errorMessage = await response.text();
         throw new Error(errorMessage);
       }
+
       Swal.fire({
         icon: "success",
         title: "Success",
-        text: "User registered successfully!",
+        text: "User registered successfully! Please check your email for the verification code.",
       });
-      event.target.reset();
+
+      navigate("/verification", { state: { email: formData.email } });
     } catch (error) {
       Swal.fire({
         icon: "error",

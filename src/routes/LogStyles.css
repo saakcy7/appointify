@@ -5,11 +5,9 @@ body {
   padding: 0;
 }
 
-/* Landing page styles (if any) */
-
 /* Signup page specific styles */
 .signup-page-container {
-  background:/* linear-gradient(rgba(116, 235, 213, 0.8), rgba(159, 174, 230, 0.8))*/ url(../assets/photi.webp);
+  background: url(../assets/photi.webp);
   min-height: 100vh;
   display: flex;
   align-items: center;
