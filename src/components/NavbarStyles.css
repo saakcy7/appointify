@@ -50,37 +50,9 @@
   transition: all 0.2s ease-in-out;
 }
 
-.nav-links-mobile {
-  display: block;
-  text-align: center;
-  padding: 0.8rem;
-  margin: auto;
-  margin-bottom: 3px;
-  border-radius: 16px;
-  width: 100%;
-  background: rgb(88, 165, 255);
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
 
-button {
-  padding: 0.5rem 1rem;
-  white-space: nowrap;
-  border-radius: 0.3rem;
-  font-size: 1.2rem;
-  font-weight: 400;
-  border: none;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-}
 
-button:hover {
-  background-color: #151516;
-  color: #fff;
-}
+
 
 .menu-icons {
   display: none;
@@ -133,20 +105,6 @@ button:hover {
     display: none;
   }
 
-  .nav-links-mobile {
-    display: block;
-    text-align: center;
-    padding: 1.5rem;
-    margin: auto;
-    border-radius: 4px;
-    width: 50%;
-    background: rgb(88, 165, 255);
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-  }
 
   .menu-icons {
     display: block;

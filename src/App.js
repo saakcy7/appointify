@@ -11,7 +11,8 @@ import Beauty from "./routes/beauty";
 import ForgotPassword from "./routes/forgotpassword";
 import ResetPassword from "./routes/resetpassword";
 import VerifyResetOTP from "./routes/verifyotp";
-
+import VerifyEmail from "./routes/verification";
+import UserProfile from "./routes/User/UserProfile";
 function App() {
   return (
     <div className="App">
@@ -28,6 +29,9 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/verify-reset-otp" element={<VerifyResetOTP />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/verification" element={<VerifyEmail />} />
+        <Route path="/user/:activepage" element={<UserProfile/>} />
+
       </Routes>
     </div>
   );

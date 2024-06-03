@@ -13,15 +13,14 @@ export const MenuItems = [
     },
     {
         title: "Profile",
-        url: "/profile",
+        url: "/user/account",
         cName: "nav-links",
         icon: "fa-solid fa-user"
     },
     {
-        title: "Signup",
         url: "/log",
         cName: "nav-links-mobile",
-        icon: "fa-solid fa-right-to-bracket"
+        
     },
     {
         url:"/cat",
