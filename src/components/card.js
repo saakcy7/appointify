@@ -1,11 +1,26 @@
 import doc1 from "../assets/doc1.jpg";
 import salon1 from "../assets/salon1.jpg";
 import elec2 from "../assets/elec2.jpg";
-
+import "./sidebar.css";
+import "./bot.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRobot } from '@fortawesome/free-solid-svg-icons';
 function Card(){
     return(
         <>
-        <div className="cat">
+            <div className="sidebar">
+            <ul>
+               <li><a href="/"><i class="fa-regular fa-calendar-check"></i>Appointify</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/appoint">Appointments</a></li>
+                <li><a href="/">Logout</a></li>
+
+                {/* Add more menu items here */}
+            </ul>
+        </div>
+        <div className="cat-container">
        <div className="card">
             <img className="card-image" src={doc1} alt="profile picture"></img>
             <h2 className="card-title">Medical</h2>
@@ -25,6 +40,10 @@ function Card(){
         Click here to see the list of maintenance professionals.
         </a>
    </div> 
+   </div>
+   
+   <div className="bot">
+     
    </div>
    </>
     );

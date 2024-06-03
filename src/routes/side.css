@@ -1,0 +1,29 @@
+.side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #ADD8E6;
+    color: white;
+    padding: 20px;
+}
+
+.side ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side a {
+    text-decoration: none;
+    display: block;
+    color: black;
+    font-size: 20px;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.side a:hover {
+    background-color:white;
+    border-radius: 15px;
+}
