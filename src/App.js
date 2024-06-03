@@ -4,7 +4,6 @@ import Home from "./routes/Home";
 import About from "./routes/About";
 import Profile from "./routes/Profile";
 import Log from "./routes/Log";
-import { useEffect } from "react";
 import Category from "./routes/category";
 import Main from "./routes/main";
 import Medical from "./routes/medical";
@@ -12,9 +11,10 @@ import Beauty from "./routes/beauty";
 import ForgotPassword from "./routes/forgotpassword";
 import ResetPassword from "./routes/resetpassword";
 import VerifyResetOTP from "./routes/verifyotp";
+import Book from "./routes/Booking";
 
 function App() {
-  useEffect(() => {}, []);
+
   return (
     <div className="App">
       <Routes>
@@ -30,8 +30,10 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/verify-reset-otp" element={<VerifyResetOTP />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/book" element={<Book/>} />
       </Routes>
-    </div>
+      </div>
+
   );
 }
 export default App;

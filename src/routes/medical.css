@@ -1,0 +1,53 @@
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background-image: url(../assets/img17.jpg);
+     /* Add horizontal scrolling on small devices */
+}
+
+.table th, .table td {
+    white-space: nowrap;
+     /* Prevents the content from wrapping */
+}
+
+.table td{
+    background-color: white;
+}
+
+.table td .button{
+   background-color: rgb(88,165,255);
+   padding: 10px;
+   margin: 15px 10px;
+   border-style:groove;
+   border-color: black;  
+
+}
+
+.table td .button:hover{
+    background-color: rgb(73, 73, 223);
+    
+ 
+ }
+ .table td .button a{
+    text-decoration: none;
+    color: white;
+    background-color: rgb(88,165,255);
+
+ }
+ .table td .button a:hover{
+    background-color: rgb(73, 73, 223);
+
+ }
+
+@media screen and (max-width: 600px) {
+    .table {
+        width: 100%; 
+        margin-left: 150px; 
+    }
+     
+    .table td .button{
+        display: flex;
+       
+        
+    }
+}

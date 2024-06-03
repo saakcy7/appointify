@@ -36,6 +36,7 @@ body {
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
+  flex-direction: row;
 }
 
 .account-form-container button,
@@ -49,6 +50,9 @@ body {
   width: 48%;
   text-align: center;
   box-sizing: border-box;
+
+  
+
 }
 
 .account-form-container button:hover,
@@ -131,20 +135,24 @@ body {
 }
 
 /* Responsive styles */
-@media (max-width: 600px) {
+@media (max-width: 450px) {
   .account-form-container form {
     max-width: 100%;
-    padding: 15px;
+    padding: 10px;
   }
 
   .account-form-container .button-container {
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    flex-direction: row;
   }
 
   .account-form-container button,
   .account-form-container .toggle-button {
     width: 100%;
-    margin-bottom: 10px;
+    
   }
 }
 

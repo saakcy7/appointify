@@ -38,6 +38,10 @@ export const MenuItems = [
     {
         url:"/medical",
         cName:"nav-links-medical",
+    },
+    {
+        url:"/book",
+        cName:"nav-links-book",
     }
 
 ]
