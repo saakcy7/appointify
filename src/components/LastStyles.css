@@ -4,10 +4,11 @@
 }
 
 .services h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  font-weight: 700;
 }
 .services p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .servicecard {
@@ -42,8 +43,14 @@
 }
 
 .t-card h4 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   padding: 0.9rem 0.2rem 0;
+  font-weight: 700;
+}
+
+.t-card p {
+  font-size: 1.2rem;
+  padding: 0.2rem 0.2rem 0.5rem;
 }
 
 @media screen and (max-width: 850px) {

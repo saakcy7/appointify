@@ -3,11 +3,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 10px;
   box-shadow: 0 5px 10px 0 rgba(255, 255, 255, 0.333);
-  width: 95%;
-  height: 70px;
-  border-radius: 25px;
+  width: 99%;
+  height: 80px;
+  border-radius: 24px;
+  box-shadow: 0 3px 5px 0 rgba(88,165,255);
   position: fixed;
   top: 20px;
   left: 50%;
@@ -17,9 +18,13 @@
 }
 
 .navbar-logo {
-  color: #222;
-  font-size: 2rem;
+  color: rgb(88, 165, 255);
+  font-weight: 400;
+  font-size: 2.5rem;
   cursor: pointer;
+  margin-right:750px;
+  margin-bottom:20px ;
+
 }
 
 .nav-menu {
@@ -35,18 +40,22 @@
   color: #222;
   font-size: 1.2rem;
   font-weight: 400;
-  padding: 0.7rem 1rem;
+  padding: 0.4rem 0.2rem;
   white-space: nowrap;
+  position: relative;
 }
 
 .nav-links i {
   padding-right: 10px;
+  gap: 50px;
+  
 }
 
 .nav-links:hover {
   background-color: rgb(88, 165, 255);
   color: #fff;
-  border-radius: 8px;
+  height: 20px;
+  border-radius: 2px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -58,10 +67,13 @@
   display: none;
   cursor: pointer;
 }
-
 @media screen and (max-width: 850px) {
+  .navbar-logo{
+    margin-right: 400px;
+  }
   .NavbarItems {
     z-index: 99;
+    width: 100%;
   }
 
   .nav-menu {
@@ -105,13 +117,22 @@
     display: none;
   }
 
+.NavbarItems .player{
+  display: none;
+}
 
   .menu-icons {
     display: block;
+    
   }
 
   .menu-icons i {
     font-size: 1.2rem;
-    color: #222;
+    color: #222; 
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: block;
   }
 }
+
+

@@ -2,7 +2,6 @@ import "./index.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./routes/Home";
 import About from "./routes/About";
-import Profile from "./routes/Profile";
 import Log from "./routes/Log";
 import Category from "./routes/category";
 import Main from "./routes/main";
@@ -12,7 +11,8 @@ import ForgotPassword from "./routes/forgotpassword";
 import ResetPassword from "./routes/resetpassword";
 import VerifyResetOTP from "./routes/verifyotp";
 import VerifyEmail from "./routes/verification";
-import UserProfile from "./routes/User/UserProfile";
+import UserProfile from "./routes/UserProfile";
+import Booking from "./routes/Booking";
 function App() {
   return (
     <div className="App">
@@ -20,7 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Log />} />
         <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<UserProfile />} />
         <Route path="/log" element={<Log />} />
         <Route path="/cat" element={<Category />} />
         <Route path="/main" element={<Main />} />
@@ -30,7 +30,8 @@ function App() {
         <Route path="/verify-reset-otp" element={<VerifyResetOTP />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/verification" element={<VerifyEmail />} />
-        <Route path="/user/:activepage" element={<UserProfile/>} />
+        <Route path="/book" element={<Booking/>}/>
+        
 
       </Routes>
     </div>

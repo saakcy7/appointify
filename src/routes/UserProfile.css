@@ -1,0 +1,140 @@
+.userprofile{
+    display:flex;
+    flex-direction: column;
+}
+
+.userprofile .userprofile-container .s1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height:200px;
+    margin-right: 100px;
+    width:20%;
+    border:5px solid rgb(88,165,255);
+    border-radius: 70px;
+}
+
+.userprofile .userprofile-container .s2 .mainbutton{
+        background : none;
+        border: 1px solid rgb(88,165,255);
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 3.0rem;
+        cursor:pointer;
+        color: rgb(88,165,255);
+}
+.userprofile .userprofile-container .s2 .mainbutton:hover{
+background-color: rgb(88,165,255);
+color: white;
+}
+
+.userprofile .userprofile-container .s2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    height:200px;
+    margin-right: 400px;
+    margin-left: 160px;
+    width:80%;
+    height: 70vh;
+    border: 2px solid rgb(88,165,255);
+}
+
+.userprofile .userprofile-container .s2 .text{
+padding: 10px 20px;
+}
+
+.userprofile .userprofile-container .s2 .form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+.userprofile .userprofile-container .s2 .form .form-group{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin: 10px;
+}
+
+.userprofile .userprofile-container .s2 .form .form-group label{
+    font-size: 1.0rem;
+    font-weight: 500;
+    margin: 10px;
+}
+
+@media screen and (max-width: 850px) {
+    .userprofile .userprofile-container .s2 .mainbutton{  
+    background : none;
+    border: 1px solid rgb(88,165,255);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.0rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    cursor:pointer;
+    color: rgb(88,165,255);
+    display: flex;
+}
+.userprofile .userprofile-container .s2 .mainbutton:hover{
+background-color: rgb(88,165,255);
+color: white;
+}
+
+.userprofile .userprofile-container .s2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    height:200px;
+    margin-right: 400px;
+    margin-left: 160px;
+    width:60%;
+    height: 80vh;
+    border: 2px solid rgb(88,165,255);
+}
+@media screen and (min-width: 450px) {
+    .userprofile .userprofile-container .s2 .mainbutton{  
+    background : none;
+    border: 1px solid rgb(88,165,255);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.0rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    cursor:pointer;
+    color: rgb(88,165,255);
+    display: flex;
+}
+.userprofile .userprofile-container .s2 .mainbutton:hover{
+background-color: rgb(88,165,255);
+color: white;
+}
+
+.userprofile .userprofile-container .s2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    height:200px;
+    margin-right: 400px;
+    margin-left: 160px;
+    width:60%;
+    height: 80vh;
+    border: 2px solid rgb(88,165,255);
+}
+}
+}
+
+

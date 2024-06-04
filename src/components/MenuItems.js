@@ -12,8 +12,8 @@ export const MenuItems = [
         icon: "fa-solid fa-address-card"
     },
     {
-        title: "Profile",
-        url: "/user/account",
+        title: "UserProfile",
+        url: "/Profile",
         cName: "nav-links",
         icon: "fa-solid fa-user"
     },

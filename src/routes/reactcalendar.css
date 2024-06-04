@@ -1,0 +1,29 @@
+.cal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This makes the div take up the full height of the viewport */
+}
+.cal .calendar {
+    max-width: 400px;
+    width: 100%;
+}
+body {
+    min-height: 100vh;
+}
+.parent-div {
+    min-height: 100vh;
+}
+@media screen and (max-width: 800px) {
+    .cal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .cal .calendar {
+        max-width: 400px;
+        width: 100%;
+    }
+}

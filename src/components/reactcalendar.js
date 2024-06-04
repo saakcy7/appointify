@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Calendar from 'react-calendar';
+import render from 'react-dom';
 import './reactcalendar.css';
-const Booking=()=>{
+const ReactCalendar=()=>{
  const [date,setDate] = useState(new Date());
  const onChange = date => {
     setDate(date);
@@ -15,6 +16,5 @@ const Booking=()=>{
         </>
     );
 };
-export default Booking;
 
-
+ReactDOM.render(<ReactCalendar/>, document.querySelector('#root'));
