@@ -87,6 +87,7 @@ const AccountForm = () => {
       }
       const data = await response.json();
       localStorage.setItem("token", data.token);
+      console.log(localStorage);
       Swal.fire({
         icon: "success",
         title: "Success",

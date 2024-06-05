@@ -1,26 +1,34 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-
+import { useState } from "react";
+import { Navigate, useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import Hero from "../components/hero";
 import  img16 from "../assets/bg-img.png";
 import { Player} from "@lottiefiles/react-lottie-player";
 import "./UserProfile.css";
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect } from "react";
 
-const UserProfile = (userId) => {
-    const [users,setUsers]=useState([]);
-    useEffect(()=>{
-      fetch('http://localhost:5000/:id',{
-      method: "GET",
-      })
-      .then((res)=>res.json())
-      .then((users)=>{
-        console.log(users,"userUsers");
-        setUsers(users.users);     
-      });
-    });
+const UserProfile=()=>{
+    const [user,setUser]=useState([]);
+    useEffect(() => {
+fetch('http://localhost:5000/user/665e0337769a0b7ec50c2ca1',{
+    headers:{
+       
+        'Authorization':`Bearer ${localStorage.getItem('token')}`
+    }
+    })
+    .then((response)=>{
+        if(response.status===401){
+            Navigate('/log');
+        }
+        return response.json();
+    })
+    .then((user)=>{
+        setUser(user.user);
+    })
+},[]);
+
    
     return (
         <>
@@ -45,11 +53,11 @@ const UserProfile = (userId) => {
     <div className="form">
         <div className="form-group">
             <label for="name">Name</label>
-            <input type="text" value={users.name} placeholder="Name"/>
+            <input type="text" value={user?user.fullName:' '}placeholder="Name"/>
         </div>
         <div className="form-group">
             <label for="email">Email</label>
-            <input type="email" value={users.email} placeholder="Email"/>
+            <input type="email" value={user?user.email:' '} placeholder="Email"/>
         </div>
         {/*
         <div className="form-group">
