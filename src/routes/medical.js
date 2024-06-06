@@ -3,6 +3,8 @@ import React from 'react';
 import './medical.css';
 import './side.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
  function Medical() {
     const [users,setUsers]=useState([]);
     useEffect(()=>{

@@ -13,7 +13,7 @@ export const MenuItems = [
     },
     {
         title: "UserProfile",
-        url: "/Profile",
+        url: '/profile',
         cName: "nav-links",
         icon: "fa-solid fa-user"
     },

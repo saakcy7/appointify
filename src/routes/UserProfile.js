@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { useState } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate} from "react-router-dom";
 import Footer from "../components/Footer";
 import Hero from "../components/hero";
 import  img16 from "../assets/bg-img.png";

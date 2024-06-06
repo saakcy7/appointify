@@ -13,14 +13,17 @@ import VerifyResetOTP from "./routes/verifyotp";
 import VerifyEmail from "./routes/verification";
 import UserProfile from "./routes/UserProfile";
 import Booking from "./routes/Booking";
+
 function App() {
+
   return (
+    
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Log />} />
         <Route path="/about" element={<About />} />
-        <Route path="/profile" element={<UserProfile />} />
+        <Route path="/profile" element={<UserProfile/>} />
         <Route path="/log" element={<Log />} />
         <Route path="/cat" element={<Category />} />
         <Route path="/main" element={<Main />} />

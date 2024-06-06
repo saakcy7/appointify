@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10%;
     height:200px;
     margin-right: 100px;
     width:20%;
@@ -37,7 +37,7 @@ color: white;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 0px;
+    margin-top: 40px;
     height:200px;
     margin-right: 400px;
     margin-left: 160px;
@@ -102,6 +102,10 @@ color: white;
     width:60%;
     height: 80vh;
     border: 2px solid rgb(88,165,255);
+}
+
+.userprofile .userprofile-container .s1{
+   margin-top: 15%;
 }
 @media screen and (min-width: 450px) {
     .userprofile .userprofile-container .s2 .mainbutton{  
