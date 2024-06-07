@@ -1,15 +1,15 @@
 
 .cat-container{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
     background: url(../assets/img16.jpg);
 }
 .card{
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 40px;
-    box-shadow: 5px 5px 15px rgb(88,165,255);;
+    box-shadow: 5px 5px 15px rgb(146, 191, 242);
     padding: 60px;
     margin: 80px;
     text-align: center;
@@ -50,7 +50,7 @@
 .card-1{
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 5px;
-    box-shadow: 5px 5px 15px rgb(88,165,255);
+    box-shadow: 5px 5px 15px rgb(146, 191, 242);
     padding: 60px;
     margin: 80px;
     text-align: center;
@@ -91,7 +91,7 @@
   .card-2{
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 5px;
-    box-shadow: 5px 5px 15px rgb(88,165,255);
+    box-shadow: 5px 5px 15px rgb(146, 191, 242);
     padding: 60px;
     margin: 80px;
     text-align: center;
@@ -139,4 +139,13 @@
     .card, .card-1, .card-2 {
         width: calc(33.33% - 20px);
     }
+}
+
+.clickHereLine{
+    color: rgb(188, 40, 27);
+}
+.clickHereLine:hover{
+    color: darkmagenta;
+    transition: ease 0.1s;
+    font-size: 18px;
 }

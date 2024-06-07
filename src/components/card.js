@@ -2,7 +2,6 @@ import doc1 from "../assets/doc1.jpg";
 import salon1 from "../assets/salon1.jpg";
 import elec2 from "../assets/elec2.jpg";
 import "./sidebar.css";
-import "./bot.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRobot } from '@fortawesome/free-solid-svg-icons';
 function Card(){
@@ -20,16 +19,21 @@ function Card(){
                 {/* Add more menu items here */}
             </ul>
         </div>
+
         <div className="cat-container">
+
        <div className="card">
             <img className="card-image" src={doc1} alt="profile picture"></img>
             <h2 className="card-title">Medical</h2>
-            <a href="/medical">Click here to see the list of medical professionals.</a>
+            <br></br>
+            <a href="/medical"><b className="clickHereLine">Click here to see the list of medical professionals</b></a>
        </div> 
+
         <div className="card-1">
         <img className="card-image-1" src={salon1} alt="profile picture"></img>
         <h2 className="card-title-1">Beauty</h2>
-        <a href="/beauty">Click here to see the list of beauty professionals.
+        <br></br>
+        <a href="/beauty"><b className="clickHereLine">Click here to see the list of beauty professionals.</b>
         </a>
    </div> 
    
@@ -37,14 +41,12 @@ function Card(){
         <img className="card-image-2" src={elec2} alt="profile picture"></img>
         <h2 className="card-title-2">Maintenance</h2>
         <a href="/main">
-        Click here to see the list of maintenance professionals.
+        <br></br>
+        <b className="clickHereLine">Click here to see the list of maintenance professionals. </b>
         </a>
    </div> 
    </div>
    
-   <div className="bot">
-     
-   </div>
    </>
     );
 }

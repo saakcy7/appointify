@@ -140,5 +140,23 @@ color: white;
 }
 }
 }
+.form input{
+    padding: 10px 0px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.form input::placeholder{
+    padding-left: 10px;
+}
+.mainbutton{
+    margin-top: 30px;
+}
+.s2{
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.s1{
+    margin-left: 10px;
+}
 
 

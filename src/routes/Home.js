@@ -6,6 +6,8 @@ import Last from "../components/Last";
 import Footer from "../components/Footer";
 
 function Home(){
+
+
     return(
         <>
        
@@ -21,6 +23,8 @@ function Home(){
         <Features/>
         <Last/>
         <Footer/>
+
+
         </> 
     );
 }

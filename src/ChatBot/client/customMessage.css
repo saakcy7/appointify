@@ -1,0 +1,39 @@
+.services{
+    column-gap: 10px;
+    margin: 0px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.services ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 2px;
+    padding-left: 0px;
+    list-style: none;
+}
+.content:has(.services){
+   margin: 0px;
+   padding: 0px 10px 0px 10px;
+}
+.services ul a{
+    text-decoration: none;
+    color: black;
+}
+.services ul li{
+    background-color: rgb(241, 175, 186);
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 10px;
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.each:hover{
+    background-color: rgb(203, 202, 199);
+    cursor: pointer;
+    border: 1px solid rgb(120, 2, 2);
+}

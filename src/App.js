@@ -13,6 +13,9 @@ import VerifyResetOTP from "./routes/verifyotp";
 import VerifyEmail from "./routes/verification";
 import UserProfile from "./routes/UserProfile";
 import Booking from "./routes/Booking";
+import './ChatBot/client/Chatbot.css';
+
+
 
 function App() {
 
