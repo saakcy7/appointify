@@ -2,7 +2,7 @@ import express from 'express';
 import http from 'http';
 import cors from 'cors';
 import { Server } from 'socket.io';
-const PORT = 4000;
+const PORT = 8000;
 import getBotResponse from './botMessages.js';
 import { timeStamp } from './timeStamp.js';
 
