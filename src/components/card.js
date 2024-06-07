@@ -5,6 +5,8 @@ import "./sidebar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRobot } from '@fortawesome/free-solid-svg-icons';
 function Card(){
+
+
     return(
         <>
             <div className="sidebar">

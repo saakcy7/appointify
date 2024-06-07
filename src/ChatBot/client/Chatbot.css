@@ -72,11 +72,11 @@
     max-width: 270px;
     row-gap: 4px;
     max-height: 300px;
-
 }
 .message.user{
     align-self: flex-end;
     margin-right: 10px;
+    align-items: flex-end;
 }
 .content{
     padding: 14px;
@@ -91,13 +91,13 @@
 .message.bot{
     align-self: flex-start;
     margin-left: 10px;
-
 }
 .message.bot>.content{
     background: #8F8BE8;
     color: #fff;  
-    text-align: left;
     border-radius: 0px 7px 7px 7px;
+    align-content: flex-start;
+    text-align: left;
 }
 .timeStamp{
     font-size: 10px;

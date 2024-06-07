@@ -16,7 +16,7 @@ import './Chatbot.css';
 
 /////////////////
 
-const socket = io.connect('http://localhost:4000');
+const socket = io.connect('http://localhost:8000');
 
 function timeStamp()
       {

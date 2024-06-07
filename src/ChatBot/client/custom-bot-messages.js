@@ -2,13 +2,9 @@ export const listOfServices = {
     author : 'bot',
     message : `<div className="services" id="serviceDiv">
     <ul>
-         <li className="each"> <a href="#">Medical</a></li>
-         <li className="each"> <a href="#">Salon</a></li>
-         <li className="each"> <a href="#">Parlor</a></li>
-         <li className="each"> <a href="#">Tutor</a></li>
-         <li className="each"> <a href="#">Delivery</a></li>
-         <li className="each"> <a href="#">Spa</a></li>
-         <li className="each"> <a href="#">Hotel</a></li>
+         <li className="each"> <a href="http://localhost:3000/medical">Medical</a></li>
+         <li className="each"> <a href="http://localhost:3000/beauty">Beauty</a></li>
+         <li className="each"> <a href="http://localhost:3000/main">Maintainance</a></li>
         
     </ul>
     </div>`
@@ -24,25 +20,21 @@ export const wouldYouLike = {
 </form>`,
 };
 
-export const tenMinutesQ = {
-    author : 'bot',
-    message : ` <div className="tenMinutesQ">
-        <p>Do you want to see out services ? </p>
-        <div><button>Yes</button>
-        <button>No</button></div>
-        </div>`
-};
 
 export const medicalList = {
-    message : `<p>Please click the underlined text to move to medical lists <a href="#">&nbsp;CLICK &nbsp;</a></p>`
+    message : `<p>Please click the underlined text to move to medical lists <a href="http://localhost:3000/medical">&nbsp;CLICK &nbsp;</a></p>`
 };
 
-export const salon = {
-    message : `<p>Please click the underlined text to move to the Page for all the <b><a href="#">&nbsp;Salon&nbsp;</a></b> Services</p>`
+export const beauty = {
+    message : `<p>You can navigate to see the beauty service providers by clicking <b><a href="http://localhost:3000/beauty">&nbsp;BEAUTY &nbsp;</a></b> Services</p>`
 }
 
 export const spa = {
-    message : `We have many spa service providers that you can book . Please click the link to move to the <b><a href="#">&nbsp;SPA&nbsp;</a></b>pages`
+    message : `We have many spa service providers that you can book . Please click the link to move to the <b><a href="http://localhost:3000/spa">&nbsp;SPA&nbsp;</a></b>pages`
+}
+
+export const maintainance = {
+    message : `We have many maintainance providers that you can book . Please click the link to move to the <b><a href="http://localhost:3000/main">&nbsp;MAINTAINANCE&nbsp;&nbsp;</a></b>pages`
 }
 
 
