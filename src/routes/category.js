@@ -18,7 +18,7 @@ function Category() {
         }
 
     return(
-       <>
+       <div className="category-page">
             <Card/>
             {
                 isAuthenticated && (
@@ -43,7 +43,7 @@ function Category() {
 
         
 
-        </>
+        </div>
     );
 }
 export default Category;

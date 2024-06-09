@@ -47,99 +47,33 @@
     transform: translateY(-18px);
   }
 
-.card-1{
-    border: 1px solid hsl(0, 0%, 80%);
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px rgb(146, 191, 242);
-    padding: 60px;
-    margin: 80px;
-    text-align: center;
-    max-width: 500px;
-    display: inline-block;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    
-  
-}
-.card-1 .card-image-1{
-    max-width: 60%;
-    height: auto;
-    border-radius: 20%;
-    margin-bottom: 10px;
-    margin-right: 20px;
-    transition-property: box-shadow, transform;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
-}
-.card-1 .card-title-1{
-   
-    margin: 0;
-    color: hsl(0, 0%, 20%);
-}
-.card-1 a{
-    text-decoration: none;
-    color:  hsl(0, 0%, 20%);
-}
-.card-1:is(:hover,:focus) {
-    box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2);
-    transform: translateY(-18px);
-  }
 
-  .card-2{
-    border: 1px solid hsl(0, 0%, 80%);
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px rgb(146, 191, 242);
-    padding: 60px;
-    margin: 80px;
-    text-align: center;
-    max-width: 550px;
-    display: inline-block;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    
-  
-}
-.card-2 .card-image-2{
-    max-width: 60%;
-    height: auto;
-    border-radius: 20%;
-    margin-bottom: 10px;
-    margin-right: 20px;
-    transition-property: box-shadow, transform;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
-}
-.card-2 .card-title-2{
-   
-    margin: 0;
-    color: hsl(0, 0%, 20%);
-}
-.card-2 a{
-    text-decoration: none;
-    color:hsl(0, 0%, 20%);
-}
-.card-2:is(:hover,:focus) {
-    box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2);
-    transform: translateY(-18px);
-  }
   @media (min-width: 450px) {
-    .card, .card-1, .card-2 {
+    .card{
         width: 50%;
-        margin-left: 250px;
     }
 }
 
 @media (min-width: 1024px) {
-    .card, .card-1, .card-2 {
+    .card{
         width: calc(33.33% - 20px);
     }
 }
+
+@media all and (max-width : 1024px)
+{
+    .card{
+        max-width: 50%;
+    }
+}   
+
+@media all and (max-width : 800px) {
+    .card {
+       max-width: 50%;
+       height: 50%;
+    }
+}
+
 
 .clickHereLine{
     color: rgb(188, 40, 27);
