@@ -12,7 +12,7 @@ import { useEffect } from "react";
 const UserProfile=()=>{
     const [user,setUser]=useState([]);
     useEffect(() => {
-fetch('http://localhost:5000/user/665e0337769a0b7ec50c2ca1',{
+fetch('http://localhost:4000/user/665e0337769a0b7ec50c2ca1',{
     headers:{
        
         'Authorization':`Bearer ${localStorage.getItem('token')}`

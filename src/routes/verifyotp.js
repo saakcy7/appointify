@@ -19,7 +19,7 @@ const VerifyResetOTP = () => {
   const handleVerifyOtp = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/user/verifyotp", {
+      const response = await fetch("http://localhost:4000/user/verifyotp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

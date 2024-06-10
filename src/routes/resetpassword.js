@@ -22,7 +22,7 @@ const ResetPassword = () => {
   const handleResetPassword = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/user/reset-password", {
+      const response = await fetch("http://localhost:4000/user/reset-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

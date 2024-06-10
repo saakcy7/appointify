@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
  function Beauty() {
     const [users,setUsers]=useState([]);
     useEffect(()=>{
-      fetch('http://localhost:5000/user/getusersbycategory?category=beauty',{
+      fetch('http://localhost:4000/user/getusersbycategory?category=beauty',{
       method: "GET",
       })
       .then((res)=>res.json())

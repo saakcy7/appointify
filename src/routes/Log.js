@@ -43,7 +43,7 @@ const AccountForm = () => {
         throw new Error("Password must contain at least one special character.");
       }
 
-      const response = await fetch("http://localhost:5000/user/register", {
+      const response = await fetch("http://localhost:4000/user/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -74,7 +74,7 @@ const AccountForm = () => {
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/user/login", {
+      const response = await fetch("http://localhost:4000/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -21,7 +21,7 @@ const VerifyEmail = () => {
     event.preventDefault();
     try {
       console.log("Sending OTP verification request...", { email: state.email, verificationCode });
-      const response = await fetch("http://localhost:5000/user/verifyemail", {
+      const response = await fetch("http://localhost:4000/user/verifyemail", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

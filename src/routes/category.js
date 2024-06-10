@@ -17,7 +17,9 @@ function Category() {
             setshowChatbot(!showChatbot);
         }
 
-    return(
+    if(isAuthenticated)
+        {
+            return(
        <div className="category-page">
             <Card/>
             {
@@ -45,5 +47,10 @@ function Category() {
 
         </div>
     );
+    }
+    else
+    {
+        return(<h2>Please login or signup to use our services</h2>);
+    }
 }
 export default Category;

@@ -11,7 +11,7 @@ function CreateAppointmentForm() {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/appointment/create/", {
+      const response = await axios.post("http://localhost:4000/appointment/create/", {
         startTime,
         endTime,
         description,

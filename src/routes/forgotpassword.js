@@ -14,7 +14,7 @@ const RequestResetOTP = () => {
   const handleSendOtp = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/user/forgot-password", {
+      const response = await fetch("http://localhost:4000/user/forgot-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

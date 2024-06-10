@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
  function Medical() {
     const [users,setUsers]=useState([]);
     useEffect(()=>{
-      fetch('http://localhost:5000/user/getusersbycategory?category=medical',{
+      fetch('http://localhost:4000/user/getusersbycategory?category=medical',{
       method: "GET",
       })
       .then((res)=>res.json())
