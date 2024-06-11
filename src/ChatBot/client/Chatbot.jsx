@@ -255,7 +255,7 @@ const handleRadioChange = (e)=>
         },
       {
         author : 'bot',
-          message : 'Please choose from the list of LG product that I can assist you?',
+          message : 'Please choose from the list of Appointify services that I can assist you?',
           time : timeStamp()
       },
     {

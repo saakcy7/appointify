@@ -22,11 +22,14 @@ class Navbar extends Component {
       <nav className="NavbarItems">
        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
 
-<Player className="player" autoplay loop src="https://lottie.host/c03e2642-1d0f-4dc1-8404-852f6b52b777/z4qVGbVRf0.json" background="transparent" speed="1" style={mystyle}></Player><h1 className="navbar-logo"><strong>Appointify</strong></h1>
+      <div className="left-section"><Player className="player" autoplay loop src="https://lottie.host/c03e2642-1d0f-4dc1-8404-852f6b52b777/z4qVGbVRf0.json" background="transparent" speed="1" style={mystyle}></Player><h1 className="navbar-logo"><strong>Appointify</strong></h1></div>
+
+
         <div className="menu-icons" onClick={this.handleClick}>
           <i className={this.state.clicked ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>
         </div>
 
+        <div className="right-section">
         <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
           {MenuItems.map((item, index) => {
             return (
@@ -39,6 +42,7 @@ class Navbar extends Component {
             );
           })}
         </ul>
+        </div>
       </nav>
     );
   }

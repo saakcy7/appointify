@@ -53,7 +53,7 @@ fetch('http://localhost:4000/user/665e0337769a0b7ec50c2ca1',{
     <div className="form">
         <div className="form-group">
             <label for="name">Name</label>
-            <input type="text" value={user?user.fullName:' '}placeholder="Name"/>
+            <input type="text" value={user?user.fullName:' '} placeholder="Name"/>
         </div>
         <div className="form-group">
             <label for="email">Email</label>

@@ -15,11 +15,8 @@
     position: relative;
 }
 
-.heroone h1{
+.hero h1{
     padding-top: 4rem !important;
-    
-
-    
 }
 
 img{
@@ -39,7 +36,7 @@ img{
 
 .hero-text h1{
     font-size: 4rem;
-    font-weight: 800;
+    font-weight: 750;
      background: black;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -50,42 +47,30 @@ img{
     font-weight: 500;
      color: black;
      padding: 0.5rem 0 2rem 0;
+     margin-bottom: 32px;
    
 }
 
-.hero-text .show{
+.show{
         text-decoration: none;
-        font-size: 22px;
+        font-size: 23px;
         font-weight: 400;
-        color: black;
-        letter-spacing: 3px;
         padding: 13px 20px 13px;
-        outline: 0;
-        border: 2px solid black;
+        border: 0px solid black;
+        border-radius: 12px;
         cursor: pointer;
         position: relative;
-        background-color: rgba(0, 0, 0, 0);
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
+        background-color: rgb(95, 166, 248);
+        color: white;
       }
+    .show:hover{
+        background-color: rgb(20, 92, 174);
+        padding: 20px 30px;
+        font-size: 26px;
+    }
       
-      .hero-text .show:after {
-        content: "";
-        background-color: rgb(88,165,255);
-        width: 100%;
-        z-index: -1;
-        position: absolute;
-        height: 100%;
-        top: 7px;
-        left: 7px;
-        transition: 0.2s;
-      }
-      
-      .hero-text .show:hover:after {
-        top: 0px;
-        left: 0px;
-      }
+    
+    
       
       @media (min-width: 768px) {
         .hero-text .show {
@@ -105,7 +90,7 @@ img{
         padding: 0 0 2rem 0;
     }
 
-    .hero-text .show{
+    .show{
         padding: .6rem 1.1rem;
         border-radius: 6px;
         font-size: 1rem;
