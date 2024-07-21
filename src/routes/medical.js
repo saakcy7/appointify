@@ -48,7 +48,6 @@ import { useNavigate } from 'react-router-dom';
                         return(
                             
                         <tr className="table" style={{border: '1px solid black'}}>
-                           
                             <td style={{padding: '20px',border: '1px solid black'}}>{i.fullName}</td>
                             <td style={{padding: '20px',border: '1px solid black'}}>{i.email}</td>
                             <td style={{padding: '20px',border: '1px solid black'}}>{i.address}</td>

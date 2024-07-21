@@ -1,0 +1,27 @@
+.content{
+ display: flex;
+ align-items: center;
+ justify-content: flex-end;
+ margin: 0 15px;
+ height: 50px;
+}
+.content .tex h1{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-right: 50px;
+}
+
+.content h1{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+       
+}
+.content .text{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    gap: 10px;
+}
+

@@ -1,63 +1,40 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { Player } from '@lottiefiles/react-lottie-player';
-import axios from 'axios';
+import Notification from './Notification';
+import { navigate,useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
-function CreateAppointmentForm() {
-  const [startTime, setStartTime] = useState('');
-  const [endTime, setEndTime] = useState('');
-  const [description, setDescription] = useState('');
-  const handleSubmit = async (event) => {
+function Booking() {
+  const [user,setUser]=useState([]);
+  const navigate=useNavigate();
+  const HandleBooking = (event) => {
     event.preventDefault();
-
-    try {
-      const response = await axios.post("http://localhost:5000/appointment/create/", {
-        startTime,
-        endTime,
-        description,
-         // Replace with the actual appointedTo ID
-      
-        },
-      {
-        headers: {
-          'Authorization':`Bearer ${localStorage.getItem('token')}`
-        },
-      });
-
-      if (response.status !== 200) {
-        throw new Error('Failed to create appointment');
-      }
-
-      console.log('Appointment created successfully');
-      // Add further logic here, like displaying a success message or redirecting the user
-    } catch (error) {
-      console.error('Error creating appointment:', error);
-      // Handle error scenarios, like displaying an error message to the user
-    }
-  };
-
+    navigate('/notification');
+    toast.success("Appointment booked successfully!");
+  }
 
   return (
     <>
            <div className='booking'> <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
 
 <Player autoplay loop src="https://lottie.host/ec5ddf24-f2fe-4d3c-8b1f-9081e25f621d/hx6QZ2T3AF.json" background="transparent" speed="1" style={{width: '150px', height: '200px'}}> </Player><h1>Book An Appointment</h1></div>
+<i class="fa-regular fa-bell" onClick={()=>{navigate('/notification')}}></i>
       <div className='book'>
         <h2>Select an appropriate date</h2>
-        
-      </div>
-      <form onSubmit={handleSubmit}>
+    </div>
+    <form onSubmit={(event) => HandleBooking(event)}>
         <label>
           Start Time:
-          <input type="datetime-local" value={startTime} onChange={(e) => setStartTime(e.target.value)} />
+          <input type="datetime-local" name="startTime"  />
         </label>
         <label>
           End Time:
-          <input type="datetime-local" value={endTime} onChange={(e) => setEndTime(e.target.value)} />
+          <input type="datetime-local" name="endTime"   />
         </label>
         <label>
           Description:
-          <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
+          <input type="text"  />
         </label>
         <button type="submit">Book Appointment</button>
       </form>
@@ -65,4 +42,4 @@ function CreateAppointmentForm() {
   );
 }
 
-export default CreateAppointmentForm;
+export default Booking;

@@ -13,7 +13,7 @@ import VerifyResetOTP from "./routes/verifyotp";
 import VerifyEmail from "./routes/verification";
 import UserProfile from "./routes/UserProfile";
 import Booking from "./routes/Booking";
-
+import Notification from "./routes/Notification";
 function App() {
 
   return (
@@ -34,7 +34,7 @@ function App() {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/verification" element={<VerifyEmail />} />
         <Route path="/book" element={<Booking/>}/>
-        
+        <Route path="/notification" element={<Notification />} />
 
       </Routes>
     </div>

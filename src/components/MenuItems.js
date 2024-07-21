@@ -41,6 +41,10 @@ export const MenuItems = [
     {
         url:"/book",
         cName:"nav-links-book",
+    },
+    {
+        url:"/notification",
+        cName:"nav-links-notification",
     }
 
 ]
